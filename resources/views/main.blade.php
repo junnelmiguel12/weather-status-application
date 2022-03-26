@@ -38,7 +38,7 @@
                             @endif
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary" data-lang="{{ $aCountry['latlng'][0] }}" data-long="{{ $aCountry['latlng'][1] }}">View</button>
+                            <button type="button" id="viewBtn" class="btn btn-primary" data-lang="{{ $aCountry['latlng'][0] }}" data-long="{{ $aCountry['latlng'][1] }}">View</button>
                         </td>
                     </tr>
                 @endforeach    

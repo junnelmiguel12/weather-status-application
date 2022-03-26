@@ -29,4 +29,18 @@ class MainRepository extends BaseApi
 
         return $this->getRequest();
     }
+
+    /**
+     * Function to send api ge request for weather status of specific location
+     * @param $aData
+     * @return array
+     */
+    public function searchWeatherStatus($aData)
+    {
+        $this->sApiBaseUrl = ApiConstants::OPEN_WEATHER_MAP_BASE_URL;
+        $this->sApiPath = ApiConstants::OPEN_WEATHER_MAP_SEARCH_ENDPOINT . 
+        sprintf($this->sOpenWeatherMapSearchParams, $aData['latitude'], $aData['longitude'], env('OPEN_WEATHER_MAP_USER_APP_ID'));
+        
+        return $this->getRequest();
+    }
 }

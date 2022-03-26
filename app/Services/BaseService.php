@@ -17,6 +17,11 @@ class BaseService
     private $oRepository;
 
     /**
+     * Array variable for returning result
+     */
+    protected $aResult = [];
+
+    /**
      * Function to validate api result
      * @param $mResult
      * @return mixed

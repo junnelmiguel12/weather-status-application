@@ -15,3 +15,4 @@ use \App\Http\Controllers\mainController;
 */
 
 Route::get('/', [mainController::class, 'index'])->name('main');
+Route::get('/get/weather/status', [mainController::class, 'searchWeatherStatus']);

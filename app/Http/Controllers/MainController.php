@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Response;
 
 /**
  * Class mainController
@@ -22,8 +23,9 @@ class MainController extends BaseController
      * Instantiate mainService
      * @param $oService
      */
-    public function __construct(MainService $oService)
+    public function __construct(Request $oRequest, MainService $oService)
     {
+        $this->oRequest = $oRequest;
         $this->oService = $oService;
     }
 
@@ -53,5 +55,16 @@ class MainController extends BaseController
         $items = $items instanceof Collection ? $items : Collection::make($items);
 
         return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
+    }
+
+    /**
+     * Function to search weather status of specific location using Latitude and Longitude
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function searchWeatherStatus()
+    {
+        $aResult = $this->oService->searchWeatherStatus($this->oRequest->all());
+
+        return Response::json($aResult, $aResult['code']);
     }
 }

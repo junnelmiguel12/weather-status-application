@@ -20,4 +20,9 @@ namespace App\Repositories\Api;
      * for api path
      */
     protected $sApiPath;
+
+    /**
+     * for search weather status api parameters
+     */
+    protected $sOpenWeatherMapSearchParams = 'lat=%s&lon=%s&appid=%s';
  }
