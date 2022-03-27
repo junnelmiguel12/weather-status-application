@@ -28,10 +28,6 @@ class BaseService
      */
     protected function validateApiResult($mResult)
     {
-        if (array_key_exists('code', $mResult) === true) {
-            return false;
-        }
-
-        return $mResult['data'];
+        return array_key_exists('code', $mResult) === true ? false : $mResult['data'];
     }
 }

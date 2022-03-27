@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Weather Status App</h1>
+    <h1 style="margin-top: 20px;">Weather Status App</h1>
     <table id="country_list" class="table table-bordered">
         <thead>
             <tr>

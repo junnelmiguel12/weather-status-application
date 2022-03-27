@@ -23,4 +23,7 @@ class ApiConstants
     const ERROR_INVALID_PARAMETER = 'Invalid parameters.';
     const ERROR_FETCH_WEATHER_STATUS_FAILED = 'Something went wrong with the request.';
     const SUCCESS_MESSAGE = 'Success.';
+
+    const REQUEST_TYPE_COUNTRY_LIST = 'country-list';
+    const REQUEST_TYPE_WEATHER_STATUS ='weather-status';
 }
